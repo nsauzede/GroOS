@@ -1,0 +1,9 @@
+#f=w1-gpio-bbgw.dts
+#f=w1-gpio-bbgw2.txt
+#f=w1-gpio-bbgw3.txt
+#f=w1-gpio-bbgw5.txt
+f=w1-gpio-bbgw6.txt
+#f=w1-gpio-bbgw7.txt
+#f=w1-gpio-bbgw8.txt
+
+sudo dtc -@ -I dts -O dtb -o /lib/firmware/w1-gpio-bbgw.dtbo $f

@@ -1,0 +1,30 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+    compatible = "ti,beaglebone", "ti,beaglebone-black", "ti,beaglebone-green", "ti,am33xx";
+
+    fragment@0 {
+        target = <&am33xx_pinmux>;
+        __overlay__ {
+            w1_pins: pinmux_w1_pins {
+                pinctrl-single,pins = <
+                    0x078 0x37  /* P9_12 (GPIO 60, gpio1_28), mode 7 (GPIO), pull-up */
+                >;
+            };
+        };
+    };
+
+    fragment@1 {
+        target-path = "/";
+        __overlay__ {
+            onewire {
+                compatible = "w1-gpio";
+                pinctrl-names = "default";
+                pinctrl-0 = <&w1_pins>;
+                gpios = <&gpio1 28 0>;
+                status = "okay";
+            };
+        };
+    };
+};
