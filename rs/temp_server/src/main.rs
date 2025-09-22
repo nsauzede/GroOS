@@ -15,7 +15,7 @@ fn format_date() -> String {
 async fn index() -> impl Responder {
     let current_date = format_date();
     let formatted_temp = match read_temp() {
-        Some(temp) => format!("{:.3}°C", temp),
+        Some(temp) => format!("{:.3}&deg;C", temp),
         None => "N/A".to_string(),
     };
     let html = format!(
@@ -27,7 +27,7 @@ async fn index() -> impl Responder {
          </head>\n\
          <body>\n\
              <h1>Temperature on FrambOS</h1>\n\
-             On FrambOS right now, the date is {} and the temperature is {}\n\
+             On FrambOS right now, the date is &laquo;{}&raquo; and the temperature is {}\n\
          </body>\n\
          </html>",
         current_date, formatted_temp
