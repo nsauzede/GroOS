@@ -1,0 +1,9 @@
+[package]
+name = "bgweb"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+actix-web = "4"
+actix-rt = "2"
+chrono = { version = "0.4", features = ["clock"] }
