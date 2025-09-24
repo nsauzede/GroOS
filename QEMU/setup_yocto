@@ -1,0 +1,8 @@
+mkdir -p ~/Yocto-lab && cd ~/Yocto-lab
+mkdir -p layers builds
+#(cd layers && git clone https://git.yoctoproject.org/poky -b scarthgap && cd poky && git checkout yocto-5.0.2)
+(cd layers && git clone https://git.yoctoproject.org/poky)
+source layers/poky/oe-init-build-env  builds/build-qemu
+# For Ubuntu 24.04+
+#sudo sysctl kernel.apparmor_restrict_unprivileged_userns=0
+bitbake  core-image-minimal
