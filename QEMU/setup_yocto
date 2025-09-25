@@ -3,6 +3,20 @@ mkdir -p layers builds
 #(cd layers && git clone https://git.yoctoproject.org/poky -b scarthgap && cd poky && git checkout yocto-5.0.2)
 (cd layers && git clone https://git.yoctoproject.org/poky)
 source layers/poky/oe-init-build-env  builds/build-qemu
+
+# If troubles compiling llvm for opengl, in local.conf:
+#  DISTRO_FEATURES:remove = "opengl"
+
 # For Ubuntu 24.04+
 #sudo sysctl kernel.apparmor_restrict_unprivileged_userns=0
 bitbake  core-image-minimal
+#MACHINE=qemuarm bitbake core-image-minimal
+
+#bitbake qemu-helper-native
+#sudo /home/nico/Yocto-lab/layers/poky/scripts/runqemu-gen-tapdevs 1000 1
+#sudo /home/nico/Yocto-lab/layers/poky/scripts/runqemu-ifup 1000
+
+#runqemu qemux86-64
+
+#runqemu nographic
+#<Ctrl-a x>
