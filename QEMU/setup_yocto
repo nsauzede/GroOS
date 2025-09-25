@@ -1,3 +1,5 @@
+# This guy might take up: 140-150GB for core-minimal poky qemu x64 alone !!!
+# For rpi1 + some extra packages: 125GB
 mkdir -p ~/Yocto-lab && cd ~/Yocto-lab
 mkdir -p layers builds
 #(cd layers && git clone https://git.yoctoproject.org/poky -b scarthgap && cd poky && git checkout yocto-5.0.2)
