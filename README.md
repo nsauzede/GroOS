@@ -92,3 +92,24 @@ actix-web = "4"
 
 - setup rust in Yocto
 TODO
+
+Add auto Wifi:
+/etc/network/interfaces:
+# Wireless interfaces
+auto wlan0
+iface wlan0 inet dhcp
+        wireless_mode managed
+        wireless_essid MYSSID
+        wpa-driver wext
+        wpa-conf /etc/wpa_supplicant.conf
+/etc/wpa_supplicant.conf:
+ctrl_interface=/var/run/wpa_supplicant
+ctrl_interface_group=0
+update_config=1
+country=MYCOUNTRY
+network={
+        ssid="MYSSID"
+        psk="MYPSK"
+        key_mgmt=WPA-PSK
+        priority=1
+}
