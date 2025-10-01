@@ -113,3 +113,75 @@ network={
         key_mgmt=WPA-PSK
         priority=1
 }
+
+Add auto temp_server service:
+cat > /etc/init.d/wwwtemp <<'EOF'
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          wwwtemp
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start/stop wwwtemp
+# Description:       A simple init script to start/stop wwwtemp on boot
+### END INIT INFO
+
+# Path to the binary
+DAEMON=/usr/bin/wwwtemp
+# Name of the service
+NAME=wwwtemp
+# PID file to track the process
+PIDFILE=/var/run/$NAME.pid
+
+# Check if the binary exists
+test -x $DAEMON || exit 0
+
+case "$1" in
+  start)
+    echo "Starting $NAME..."
+    if [ -f $PIDFILE ]; then
+      echo "$NAME is already running."
+      exit 1
+    fi
+    start-stop-daemon --start --quiet --background --make-pidfile --pidfile $PIDFILE --exec $DAEMON
+    if [ $? -eq 0 ]; then
+      echo "$NAME started."
+    else
+      echo "Failed to start $NAME."
+      exit 1
+    fi
+    ;;
+  stop)
+    echo "Stopping $NAME..."
+    start-stop-daemon --stop --quiet --pidfile $PIDFILE
+    if [ $? -eq 0 ]; then
+      rm -f $PIDFILE
+      echo "$NAME stopped."
+    else
+      echo "Failed to stop $NAME."
+      exit 1
+    fi
+    ;;
+  restart)
+    $0 stop
+    sleep 1
+    $0 start
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|restart}"
+    exit 1
+    ;;
+esac
+
+exit 0
+EOF
+
+chmod +x /etc/init.d/wwwtemp
+cp /home/root/temp_server_armv7 /usr/bin/wwwtemp
+chmod +x /usr/bin/wwwtemp
+update-rc.d wwwtemp defaults
+
+# Support Netgear WLAN Grey USB adapter
+firmware needed: ar5523.bin
+

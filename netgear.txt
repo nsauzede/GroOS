@@ -1,0 +1,37 @@
+[  233.309515] usb 1-1.2: USB disconnect, device number 4
+[  233.326635] usb 1-1.2.2: USB disconnect, device number 6
+[  233.361375] usb 1-1.2.3: USB disconnect, device number 7
+[  239.751971] usb 1-1.2: new high-speed USB device number 8 using dwc_otg
+[  239.894120] usb 1-1.2: New USB device found, idVendor=1385, idProduct=4251, bcdDevice= 0.01
+[  239.913840] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[  239.932519] usb 1-1.2: Product: WG111T
+[  239.947554] usb 1-1.2: Manufacturer: Atheros Communications Inc
+[  239.964636] usb 1-1.2: SerialNumber: 1.0
+[  240.031822] usb 1-1.2: Direct firmware load for ar5523.bin failed with error -2
+[  240.051315] usb 1-1.2: no firmware found: ar5523.bin
+[  240.067501] ar5523: probe of 1-1.2:1.0 failed with error -2
+[  240.089802] usbcore: registered new interface driver ar5523
+[  367.711771] usb 1-1.2: USB disconnect, device number 8
+[  371.331968] usb 1-1.2: new high-speed USB device number 9 using dwc_otg
+[  371.476414] usb 1-1.2: New USB device found, idVendor=05e3, idProduct=0610, bcdDevice=62.44
+[  371.495972] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[  371.514347] usb 1-1.2: Product: USB2.1 Hub
+[  371.529307] usb 1-1.2: Manufacturer: GenesysLogic
+[  371.554961] hub 1-1.2:1.0: USB hub found
+[  371.576975] hub 1-1.2:1.0: 4 ports detected
+[  371.931978] usb 1-1.2.2: new low-speed USB device number 10 using dwc_otg
+[  372.109781] usb 1-1.2.2: New USB device found, idVendor=046d, idProduct=c077, bcdDevice=72.00
+[  372.129365] usb 1-1.2.2: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[  372.147812] usb 1-1.2.2: Product: USB Optical Mouse
+[  372.163473] usb 1-1.2.2: Manufacturer: Logitech
+[  372.195941] input: Logitech USB Optical Mouse as /devices/platform/soc/20980000.usb/usb1/1-1/1-1.2/1-1.2.2/1-1.2.2:1.0/0003:046D:C077.0004/input/input3
+[  372.230550] hid-generic 0003:046D:C077.0004: input,hidraw0: USB HID v1.11 Mouse [Logitech USB Optical Mouse] on usb-20980000.usb-1.2.2/input0
+[  372.381979] usb 1-1.2.3: new low-speed USB device number 11 using dwc_otg
+[  372.570162] usb 1-1.2.3: New USB device found, idVendor=046d, idProduct=c31c, bcdDevice=49.00
+[  372.590467] usb 1-1.2.3: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[  372.609605] usb 1-1.2.3: Product: USB Keyboard
+[  372.625457] usb 1-1.2.3: Manufacturer: Logitech
+[  372.670155] input: Logitech USB Keyboard as /devices/platform/soc/20980000.usb/usb1/1-1/1-1.2/1-1.2.3/1-1.2.3:1.0/0003:046D:C31C.0005/input/input4
+[  372.774371] hid-generic 0003:046D:C31C.0005: input,hidraw1: USB HID v1.10 Keyboard [Logitech USB Keyboard] on usb-20980000.usb-1.2.3/input0
+[  372.820213] input: Logitech USB Keyboard as /devices/platform/soc/20980000.usb/usb1/1-1/1-1.2/1-1.2.3/1-1.2.3:1.1/0003:046D:C31C.0006/input/input5
+[  372.915090] hid-generic 0003:046D:C31C.0006: input,hidraw2: USB HID v1.10 Device [Logitech USB Keyboard] on usb-20980000.usb-1.2.3/input1
